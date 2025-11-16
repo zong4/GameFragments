@@ -4,15 +4,13 @@ using UnityEngine;
 public class Player : MonoBehaviourPun
 {
     public float moveSpeed = 10f;
-    
+
     private void Update()
     {
         if (!photonView.IsMine)
             return;
-        
-        var moveHorizontal = Input.GetAxis("Horizontal");
-        var moveVertical = Input.GetAxis("Vertical");
-        var movement = new Vector3(moveHorizontal, moveVertical, 0.0f);
+
+        var movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
         transform.Translate(movement * (moveSpeed * Time.deltaTime));
     }
 }

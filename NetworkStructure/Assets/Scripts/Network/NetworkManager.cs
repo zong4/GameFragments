@@ -8,10 +8,19 @@ namespace Network
 {
     public class NetworkManager : MonoBehaviourPunCallbacks
     {
+        private static NetworkManager _instance;
+
         public List<RoomInfo> roomInfos;
 
         private void Awake()
         {
+            if (_instance && _instance != this)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            _instance = this;
             DontDestroyOnLoad(gameObject);
         }
 
@@ -56,12 +65,12 @@ namespace Network
 
         public override void OnCreateRoomFailed(short returnCode, string message)
         {
-            Debug.LogError($"Create Room Failed: {message}");
+            Debug.LogWarning($"Create Room Failed: {message}");
         }
 
         public override void OnJoinRoomFailed(short returnCode, string message)
         {
-            Debug.LogError($"Join Room Failed: {message}");
+            Debug.LogWarning($"Join Room Failed: {message}");
         }
 
         private static void OnRoomSceneLoaded(Scene scene, LoadSceneMode mode)

@@ -1,6 +1,6 @@
 # 🎮 Game Mechanics Showcase
 
-> A collection of Unity-based gameplay prototypes exploring unique core mechanics in modern game design.
+> "Good design is about removing, not adding." — Jonathan Blow
 
 [![Unity](https://img.shields.io/badge/Engine-Unity-222?logo=unity)](https://unity.com)
 [![C#](https://img.shields.io/badge/Language-C%23-512BD4?logo=csharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
@@ -9,109 +9,46 @@
 
 ## 🕒 SuperHot Recreation
 
-A Unity recreation of **SuperHot’s** core experience — where **time only moves when you move**.  
-Rebuilt from scratch to replicate its **time manipulation** and **combat replay** mechanics, delivering the signature “time as a weapon” tactical shooter experience.
+> A Unity recreation of **SuperHot’s** core experience — where **time only moves when you move**. Rebuilt from scratch to replicate its **time manipulation** and **combat replay** mechanics, delivering the signature "time as a weapon" tactical shooter experience.
 
 <p align="center">
   <img src="./Assets/SuperHot.gif" alt="SuperHot" width="600">
 </p>
 
-### 🧩 Core Features
-- Time-based motion control  
-- Bullet-time combat system  
-- Replay system capturing player motion  
-
 ### 🛠️ Upcoming Plans
-- [ ] 2–4 player online mode with synchronized time flow  
-- [ ] Cooperative and competitive tactical missions  
 
-## 💣 Bomber
+- [ ] 2–4 players online mode with individual time flow. 
 
-A physics-based platformer where you **are the bomb** — using explosive recoil to **jump**, **double-jump**, and **propel** yourself through the level.
+## 💣 Bomber, inspired by Öoo
+
+> A physics-based platformer where you **are the bomb** — using explosive recoil to **jump**, **double-jump**, and **propel** yourself through the level.
 
 <p align="center">
   <img src="./Assets/Bomber.gif" alt="Bomber" width="600">
 </p>
 
-### 🧩 Core Features
-- Explosion-driven movement system  
-- Diagonal jump and aerial control mechanics  
-
-### 🛠️ Upcoming Plans
-- [ ] Destructible environment and obstacle interaction  
-- [ ] Advanced recoil chaining for combo movement  
-
----
-
 ## 🌍 Minecraft Recreation
 
-A reimagining of **Minecraft’s** procedural world generation powered by **Perlin Noise**.  
-Faithfully reproduces its **chunk-based terrain system** while optimizing generation logic for performance and scalability.
+> A reimagining of **Minecraft’s** procedural world generation powered by 5-dimensional **Perlin Noise**.
 
 <p align="center">
   <img src="./Assets/MC.png" alt="Minecraft" width="600">
 </p>
 
-### 🧩 Core Features
-- Procedural terrain via 2D/3D Perlin noise  
-- Real-time mesh generation  
-- Chunk-based streaming and culling  
-
 ### 🛠️ Upcoming Plans
+
 - [ ] Parallelized terrain generation  
 - [ ] Improved chunk loading pipeline  
-- [ ] Implementation of block types and materials  
-
----
 
 ## 🌌 ParticleLife
 
-A **particle simulation sandbox** where particles interact according to customizable attraction rules.  
+> A **particle simulation sandbox** where particles interact according to customizable attraction rules.  
 Design your own **attraction matrix**, spawn colorful particles, and watch emergent behaviors unfold — from orbiting swarms to chaotic ecosystems.
 
 <!-- ![](./Assets/ParticleLife.gif) -->
-
-### 🧩 Core Features
-- Interactive particle system driven by a configurable attraction matrix  
-- Real-time parameter tuning and visualization  
-- Boundary selection and spawn control for creative setups  
-- Emergent pattern generation through simple local rules  
-
-### 🕹️ Basic Procedure
-1. **Select area** → Draw a boundary for spawning particles  
-2. **Spawn** → Create particles in the selected region  
-3. **Pause / Space** → Switch between Edit and Simulation mode  
-4. Adjust parameters to generate diverse visual patterns  
-
-### 🎛️ Controls
-
-**UI Controls**
-- `M` — Toggle menu  
-- `Esc` — Close color picker  
-
-**Camera Controls**
-- `W, A, S, D` — Move camera  
-- Mouse Scroll — Zoom in/out  
-
-**Simulation Controls**
-- `Space` — Pause / Resume simulation  
-- `R` — Clear all particles  
-- `B` — Enter or exit boundary selection mode  
-- `<` / `>` — Decrease / Increase force magnitude  
-
-### 🛠️ Upcoming Plans
-- [ ] Store settings in local storage  
-- [ ] Improved UI and extended customization options  
-- [ ] 3D particle support  
-
-## 🧠 Tech Stack
-- **Engine:** Unity   
-- **Language:** C#  
-- **Frameworks:** DOTS
 
 ## 📬 Contact
 
 **Author:** [Zong](https://github.com/zong4)    
 **Portfolio:** [zong4.github.io](https://zong4.github.io)   
 **Email:** [zzoonng@163.com](mailto:zzoonng@163.com)    
-

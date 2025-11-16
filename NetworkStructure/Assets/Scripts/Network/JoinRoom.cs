@@ -19,11 +19,13 @@ namespace Network
         private void Start()
         {
             _networkManager = GameObject.Find("Managers").GetComponent<NetworkManager>();
-            _roomList = _networkManager.roomInfos;
         }
 
         private void Update()
         {
+            if (Input.GetKeyDown(KeyCode.Escape))
+                PhotonNetwork.LoadLevel("Lobby");
+
             if (_roomList == _networkManager.roomInfos && _roomEntries.Count > 0)
                 return;
             _roomList = _networkManager.roomInfos;

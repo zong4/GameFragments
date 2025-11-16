@@ -12,6 +12,12 @@ namespace Network
         public List<Toggle> maxPlayersToggles;
         public Toggle visibleToggle;
 
+        private void Update()
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+                PhotonNetwork.LoadLevel("Lobby");
+        }
+
         public void OnHostButtonClicked()
         {
             if (string.IsNullOrEmpty(roomNameInputField.text))

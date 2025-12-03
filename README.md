@@ -40,10 +40,9 @@
 - [ ] Parallelized terrain generation  
 - [ ] Improved chunk loading pipeline  
 
-## 🌌 ParticleLife
+## 🌐 Network Structure
 
-> A **particle simulation sandbox** where particles interact according to customizable attraction rules.  
-Design your own **attraction matrix**, spawn colorful particles, and watch emergent behaviors unfold — from orbiting swarms to chaotic ecosystems.
+> A lightweight multiplayer networking framework built using Photon PUN's free tier.
 
 <!-- ![](./Assets/ParticleLife.gif) -->
 

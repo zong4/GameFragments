@@ -44,7 +44,17 @@
 
 > A lightweight multiplayer networking framework built using Photon PUN's free tier.
 
-<!-- ![](./Assets/ParticleLife.gif) -->
+<p align="center">
+  <img src="./Assets/NetworkStructure_JoinRoom.png" alt="Join Room" width="600">
+</p>
+
+<p align="center">
+  <img src="./Assets/NetworkStructure_Room.png" alt="Room" width="600">
+</p>
+
+### 🛠️ Upcoming Plans
+
+- [ ] All players ready to start game synchronization
 
 ## 📬 Contact
 

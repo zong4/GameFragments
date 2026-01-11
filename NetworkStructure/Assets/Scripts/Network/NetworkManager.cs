@@ -8,9 +8,8 @@ namespace Network
 {
     public class NetworkManager : MonoBehaviourPunCallbacks
     {
-        public List<GameObject> waitingConnectedObjects;
-
         private static NetworkManager _instance;
+        private bool _isConnected = false;
         private bool _isRoomListUpdated = false;
         private List<RoomInfo> _roomList;
 
@@ -26,10 +25,6 @@ namespace Network
             _instance = this;
             DontDestroyOnLoad(gameObject);
 
-            // Disable connected objects until connected to Photon server
-            foreach (var obj in waitingConnectedObjects)
-                obj.SetActive(false);
-
             // Connect to Photon server
             PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.ConnectUsingSettings();
@@ -38,11 +33,8 @@ namespace Network
         public override void OnConnectedToMaster()
         {
             Debug.Log("Connected to Master Server");
+            _isConnected = true;
             PhotonNetwork.JoinLobby();
-
-            // Enable connected objects
-            foreach (var obj in waitingConnectedObjects)
-                obj.SetActive(true);
         }
 
         public override void OnJoinedLobby()
@@ -87,6 +79,11 @@ namespace Network
         public static NetworkManager Instance()
         {
             return _instance;
+        }
+
+        public bool IsConnected()
+        {
+            return _isConnected;
         }
 
         public bool IsRoomListUpdated()

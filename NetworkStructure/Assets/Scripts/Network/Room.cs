@@ -53,16 +53,20 @@ namespace Network
 
         private static void TryStartGame()
         {
+            // check if all players are ready
+            var readyPlayers = 0;
             foreach (var player in PhotonNetwork.PlayerList)
             {
                 if (!player.CustomProperties.TryGetValue(PlayerReadyKey, out var readyObj))
                     return;
-
                 if (!(bool)readyObj)
                     return;
+
+                readyPlayers++;
             }
 
-            PhotonNetwork.LoadLevel("Game");
+            if (readyPlayers == PhotonNetwork.CurrentRoom.MaxPlayers)
+                PhotonNetwork.LoadLevel("Game");
         }
     }
 }

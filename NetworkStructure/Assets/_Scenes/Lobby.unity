@@ -599,6 +599,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e266461c5f464470b8d2d5b0beccc533, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitingConnectedObjects:
+  - {fileID: 1729835651}
+  - {fileID: 1885712727}
 --- !u!1 &1513523219
 GameObject:
   m_ObjectHideFlags: 0
@@ -844,9 +847,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cac1a67bdc94c808794521023abbf5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waitingConnectedObjects:
-  - {fileID: 1729835651}
-  - {fileID: 1885712727}
 --- !u!4 &1764719493
 Transform:
   m_ObjectHideFlags: 0

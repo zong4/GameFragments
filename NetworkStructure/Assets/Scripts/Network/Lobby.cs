@@ -19,7 +19,7 @@ namespace Network
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
-                Application.Quit();
+                SceneManager.LoadScene("Menu");
 
             // Enable connected objects
             if (!_isConnected && NetworkManager.Instance().IsConnected())

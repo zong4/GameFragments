@@ -1033,7 +1033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1480061961}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!1 &446046306
@@ -3278,7 +3278,7 @@ MonoBehaviour:
   - {x: 1, y: 0.19999999}
   - {x: 1, y: 0.19999999}
   - {x: 1, y: 0.19999999}
-  - {x: 0.39999998, y: 0.1}
+  - {x: 0.39999998, y: 0.099999994}
 --- !u!1 &1787683157
 GameObject:
   m_ObjectHideFlags: 0
@@ -3367,6 +3367,7 @@ GameObject:
   - component: {fileID: 1799599612}
   - component: {fileID: 1799599611}
   - component: {fileID: 1799599610}
+  - component: {fileID: 1799599614}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3458,6 +3459,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1799599614
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1799599609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebadfd3ad395456cbeca15abdedd59b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roomNameInputField: {fileID: 1480061963}
+  maxPlayersToggles:
+  - {fileID: 446046309}
+  - {fileID: 1509306823}
+  - {fileID: 1900472643}
+  visibleToggle: {fileID: 836805531}
 --- !u!1 &1826719800
 GameObject:
   m_ObjectHideFlags: 0
@@ -4466,7 +4485,6 @@ GameObject:
   - component: {fileID: 2113260518}
   - component: {fileID: 2113260517}
   - component: {fileID: 2113260516}
-  - component: {fileID: 2113260520}
   m_Layer: 5
   m_Name: Host
   m_TagString: Untagged
@@ -4538,7 +4556,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2113260520}
+      - m_Target: {fileID: 1799599614}
         m_TargetAssemblyTypeName: Network.HostRoom, Assembly-CSharp
         m_MethodName: OnHostButtonClicked
         m_Mode: 1
@@ -4588,24 +4606,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113260514}
   m_CullTransparentMesh: 1
---- !u!114 &2113260520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2113260514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebadfd3ad395456cbeca15abdedd59b7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  roomNameInputField: {fileID: 1480061963}
-  maxPlayersToggles:
-  - {fileID: 446046309}
-  - {fileID: 1509306823}
-  - {fileID: 1900472643}
-  visibleToggle: {fileID: 836805531}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

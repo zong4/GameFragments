@@ -18,7 +18,7 @@ namespace Network
             if (Input.GetKeyDown(KeyCode.Escape))
                 PhotonNetwork.LoadLevel("Lobby");
 
-            if (!NetworkManager.Instance().IsRoomListUpdated())
+            if (!NetworkManager.Instance().IsRoomListUpdated() && _roomEntries.Count > 0)
                 return;
 
             // Delete old entries

@@ -63,6 +63,7 @@ namespace Network
             Debug.Log($"IsOpen: {room.IsOpen}, IsVisible: {room.IsVisible}");
 
             SceneManager.sceneLoaded += OnRoomSceneLoaded;
+            SceneManager.sceneLoaded += OnGameSceneLoaded;
             PhotonNetwork.LoadLevel("Room");
         }
 
@@ -105,6 +106,15 @@ namespace Network
             {
                 PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
                 SceneManager.sceneLoaded -= OnRoomSceneLoaded;
+            }
+        }
+
+        private static void OnGameSceneLoaded(Scene scene, LoadSceneMode mode)
+        {
+            if (scene.name == "Game")
+            {
+                PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+                SceneManager.sceneLoaded -= OnGameSceneLoaded;
             }
         }
     }

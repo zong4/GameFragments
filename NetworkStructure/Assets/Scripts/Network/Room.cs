@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 namespace Network
 {
-    public class Room : MonoBehaviour
+    public class Room : MonoBehaviourPunCallbacks
     {
         public Button readyButton;
         private bool _isReady = false;
@@ -40,6 +40,29 @@ namespace Network
         {
             readyButton.GetComponentInChildren<TMP_Text>().text =
                 _isReady ? "Unready" : "Ready";
+        }
+
+        public override void OnPlayerPropertiesUpdate(Photon.Realtime.Player player, Hashtable changedProps)
+        {
+            if (!changedProps.ContainsKey(PlayerReadyKey))
+                return;
+
+            if (PhotonNetwork.IsMasterClient)
+                TryStartGame();
+        }
+
+        private static void TryStartGame()
+        {
+            foreach (var player in PhotonNetwork.PlayerList)
+            {
+                if (!player.CustomProperties.TryGetValue(PlayerReadyKey, out var readyObj))
+                    return;
+
+                if (!(bool)readyObj)
+                    return;
+            }
+
+            PhotonNetwork.LoadLevel("Game");
         }
     }
 }

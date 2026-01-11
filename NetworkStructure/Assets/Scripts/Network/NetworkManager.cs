@@ -67,7 +67,10 @@ namespace Network
         public override void OnLeftRoom()
         {
             Debug.Log("Left Room");
-            PhotonNetwork.LoadLevel("Lobby");
+
+            if (PhotonNetwork.IsConnected)
+                PhotonNetwork.Disconnect();
+            PhotonNetwork.LoadLevel("Menu");
         }
 
         public override void OnRoomListUpdate(List<RoomInfo> roomList)

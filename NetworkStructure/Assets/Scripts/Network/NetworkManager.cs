@@ -8,9 +8,11 @@ namespace Network
 {
     public class NetworkManager : MonoBehaviourPunCallbacks
     {
-        private static NetworkManager _instance;
+        public List<GameObject> waitingConnectedObjects;
 
-        public List<RoomInfo> roomInfos;
+        private static NetworkManager _instance;
+        private bool _isRoomListUpdated = false;
+        private List<RoomInfo> _roomList;
 
         private void Awake()
         {
@@ -20,12 +22,15 @@ namespace Network
                 return;
             }
 
+            // Singleton pattern
             _instance = this;
             DontDestroyOnLoad(gameObject);
-        }
 
-        private void Start()
-        {
+            // Disable connected objects until connected to Photon server
+            foreach (var obj in waitingConnectedObjects)
+                obj.SetActive(false);
+
+            // Connect to Photon server
             PhotonNetwork.AutomaticallySyncScene = true;
             PhotonNetwork.ConnectUsingSettings();
         }
@@ -34,11 +39,20 @@ namespace Network
         {
             Debug.Log("Connected to Master Server");
             PhotonNetwork.JoinLobby();
+
+            // Enable connected objects
+            foreach (var obj in waitingConnectedObjects)
+                obj.SetActive(true);
         }
 
         public override void OnJoinedLobby()
         {
             Debug.Log("Joined Lobby");
+        }
+
+        public override void OnCreateRoomFailed(short returnCode, string message)
+        {
+            Debug.LogWarning($"Create Room Failed: {message}");
         }
 
         public override void OnJoinedRoom()
@@ -52,6 +66,11 @@ namespace Network
             PhotonNetwork.LoadLevel("Room");
         }
 
+        public override void OnJoinRoomFailed(short returnCode, string message)
+        {
+            Debug.LogWarning($"Join Room Failed: {message}");
+        }
+
         public override void OnLeftRoom()
         {
             Debug.Log("Left Room");
@@ -60,17 +79,24 @@ namespace Network
 
         public override void OnRoomListUpdate(List<RoomInfo> roomList)
         {
-            roomInfos = roomList;
+            _roomList = roomList;
+            _isRoomListUpdated = true;
         }
 
-        public override void OnCreateRoomFailed(short returnCode, string message)
+        public static NetworkManager Instance()
         {
-            Debug.LogWarning($"Create Room Failed: {message}");
+            return _instance;
         }
 
-        public override void OnJoinRoomFailed(short returnCode, string message)
+        public bool IsRoomListUpdated()
         {
-            Debug.LogWarning($"Join Room Failed: {message}");
+            return _isRoomListUpdated;
+        }
+
+        public List<RoomInfo> RoomList()
+        {
+            _isRoomListUpdated = false;
+            return _roomList;
         }
 
         private static void OnRoomSceneLoaded(Scene scene, LoadSceneMode mode)

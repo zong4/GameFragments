@@ -844,6 +844,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5cac1a67bdc94c808794521023abbf5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waitingConnectedObjects:
+  - {fileID: 1729835651}
+  - {fileID: 1885712727}
 --- !u!4 &1764719493
 Transform:
   m_ObjectHideFlags: 0

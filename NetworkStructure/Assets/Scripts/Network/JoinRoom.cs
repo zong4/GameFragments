@@ -1,41 +1,32 @@
 using System.Collections.Generic;
 using Photon.Pun;
-using Photon.Realtime;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Network
 {
-    public class JoinRoom : MonoBehaviourPunCallbacks
+    public class JoinRoom : MonoBehaviour
     {
         public GameObject roomEntryPrefab;
         public Transform roomListContent;
         public TMP_InputField roomNameInputField;
-        private NetworkManager _networkManager;
-        private List<RoomInfo> _roomList;
         private readonly Dictionary<string, GameObject> _roomEntries = new();
-
-        private void Start()
-        {
-            _networkManager = GameObject.Find("Managers").GetComponent<NetworkManager>();
-        }
 
         private void Update()
         {
             if (Input.GetKeyDown(KeyCode.Escape))
                 PhotonNetwork.LoadLevel("Lobby");
 
-            if (_roomList == _networkManager.roomInfos && _roomEntries.Count > 0)
+            if (!NetworkManager.Instance().IsRoomListUpdated())
                 return;
-            _roomList = _networkManager.roomInfos;
 
             // Delete old entries
             foreach (var entry in _roomEntries.Values)
                 Destroy(entry);
             _roomEntries.Clear();
 
-            foreach (var roomInfo in _roomList)
+            foreach (var roomInfo in NetworkManager.Instance().RoomList())
             {
                 if (roomInfo.RemovedFromList)
                     continue;

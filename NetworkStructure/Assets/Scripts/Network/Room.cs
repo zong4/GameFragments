@@ -1,3 +1,4 @@
+using ExitGames.Client.Photon;
 using Photon.Pun;
 using TMPro;
 using UnityEngine;
@@ -9,10 +10,11 @@ namespace Network
     {
         public Button readyButton;
         private bool _isReady = false;
+        private const string PlayerReadyKey = "Ready";
 
         private void Awake()
         {
-            readyButton.GetComponentInChildren<TMP_Text>().text = _isReady ? "Unready" : "Ready";
+            UpdateReadyButtonText();
             readyButton.onClick.AddListener(OnReadyButtonClicked);
         }
 
@@ -25,7 +27,19 @@ namespace Network
         private void OnReadyButtonClicked()
         {
             _isReady = !_isReady;
-            readyButton.GetComponentInChildren<TMP_Text>().text = _isReady ? "Unready" : "Ready";
+            UpdateReadyButtonText();
+
+            var props = new Hashtable
+            {
+                { PlayerReadyKey, _isReady }
+            };
+            PhotonNetwork.LocalPlayer.SetCustomProperties(props);
+        }
+
+        private void UpdateReadyButtonText()
+        {
+            readyButton.GetComponentInChildren<TMP_Text>().text =
+                _isReady ? "Unready" : "Ready";
         }
     }
 }

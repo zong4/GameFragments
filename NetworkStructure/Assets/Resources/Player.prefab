@@ -122,6 +122,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9cde75822ed347ef9adbe1c53a80d41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boundaryX: {x: -6, y: 6}
+  boundaryY: {x: -4, y: 4}
   moveSpeed: 10
 --- !u!114 &-1893785998472458504
 MonoBehaviour:

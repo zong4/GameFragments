@@ -54,7 +54,8 @@
 
 ### 🛠️ Upcoming Plans
 
-- [ ] All players ready to start game synchronization
+- [✔] All players ready to start game synchronization
+- [✔] Appearance customization synchronization
 
 ## 📬 Contact
 

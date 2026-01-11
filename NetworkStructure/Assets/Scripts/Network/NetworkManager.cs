@@ -33,13 +33,13 @@ namespace Network
         public override void OnConnectedToMaster()
         {
             Debug.Log("Connected to Master Server");
-            _isConnected = true;
             PhotonNetwork.JoinLobby();
         }
 
         public override void OnJoinedLobby()
         {
             Debug.Log("Joined Lobby");
+            _isConnected = true;
         }
 
         public override void OnCreateRoomFailed(short returnCode, string message)

@@ -45,11 +45,11 @@
 > A lightweight multiplayer networking framework built using Photon PUN's free tier.
 
 <p align="center">
-  <img src="./Assets/NetworkStructure_JoinRoom.png" alt="Join Room" width="600">
+  <img src="./Assets/NetworkStructure/JoinRoom.png" alt="Join Room" width="600">
 </p>
 
 <p align="center">
-  <img src="./Assets/NetworkStructure_Room.png" alt="Room" width="600">
+  <img src="./Assets/NetworkStructure/Room.png" alt="Room" width="600">
 </p>
 
 ### 🛠️ Upcoming Plans

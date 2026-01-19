@@ -51,7 +51,6 @@ public class InteractiveSnow : MonoBehaviour
         RenderTexture.active = texture;
         GL.Clear(true, true, Color.white);
         RenderTexture.active = activeRT;
-
         return texture;
     }
 }

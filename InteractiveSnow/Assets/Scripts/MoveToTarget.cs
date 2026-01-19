@@ -16,7 +16,7 @@ public class MoveToTarget : MonoBehaviour
         Move();
     }
 
-    protected virtual void Move()
+    private void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position,
             speed * Time.deltaTime);

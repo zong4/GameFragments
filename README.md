@@ -5,7 +5,7 @@
 [![Unity](https://img.shields.io/badge/Engine-Unity-222?logo=unity)](https://unity.com)
 [![C#](https://img.shields.io/badge/Language-C%23-512BD4?logo=csharp)](https://docs.microsoft.com/en-us/dotnet/csharp/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
-[![Status](https://img.shields.io/badge/Build-Playable_Prototypes-blue)]()
+<!-- [![Status](https://img.shields.io/badge/Build-Playable_Prototypes-blue)]() -->
 
 ## 🕒 SuperHot Recreation
 
@@ -56,6 +56,23 @@
 
 - [✔] All players ready to start game synchronization
 - [✔] Appearance customization synchronization
+
+## ❄️ Interactive Snow
+
+> A real-time interactive snow deformation system implemented with custom shaders, enabling dynamic footprints, object interaction, and environmental response.
+
+<p align="center">
+  <img src="./Assets/InteractiveSnow/Fire.png" alt="Interactive Snow" width="600">
+</p>
+
+<p align="center">
+  <img src="./Assets/InteractiveSnow/Stone.png" alt="Interactive Snow" width="600">
+</p>
+
+### 🛠️ Upcoming Plans
+
+- [ ] Cover snow on complex 3D models  
+- [ ] Implement another method for interactive snow by camera
 
 ## 📬 Contact
 

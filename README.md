@@ -71,6 +71,7 @@
 
 ### 🛠️ Upcoming Plans
 
+- [✔] Support for multiple interaction objects
 - [ ] Cover snow on complex 3D models  
 - [ ] Implement another method for interactive snow by camera
 

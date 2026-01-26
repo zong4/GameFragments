@@ -57,7 +57,7 @@
 - [✔] All players ready to start game synchronization
 - [✔] Appearance customization synchronization
 
-## ❄️ Interactive Snow
+## ❄️ Interactive Snow Simulation
 
 > A real-time interactive snow deformation system implemented with custom shaders, enabling dynamic footprints, object interaction, and environmental response.
 
@@ -74,6 +74,22 @@
 - [✔] Support for multiple interaction objects
 - [ ] Cover snow on complex 3D models  
 - [ ] Implement another method for interactive snow by camera
+
+## 🧬 Particle Life Simulation
+
+> A large-scale Particle Life simulation built with Unity DOTS (ECS + Jobs + Burst), focusing on emergent behavior through simple force rules. Thousands to particles interact in real time, forming complex, self-organizing patterns.
+
+<p align="center">
+  <img src="./Assets/ParticleLife/Spawn.png" alt="Particle Life" width="600">
+</p>
+
+<p align="center">
+  <img src="./Assets/ParticleLife/Simulation.png" alt="Particle Life" width="600">
+</p>
+
+### 🛠️ Upcoming Plans
+
+- [ ] A 3D version of Particle Life simulation
 
 ## 📬 Contact
 

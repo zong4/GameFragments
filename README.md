@@ -1,4 +1,4 @@
-# 🎮 Game Mechanics Showcase
+# 🎮 Game Fragments Showcase
 
 > "Good design is about removing, not adding." — Jonathan Blow
 
